@@ -88,6 +88,33 @@
   --color-gray-700: oklch(37.3% 0.034 259.733);
   --color-gray-800: oklch(27.8% 0.033 256.848);
   --color-gray-900: oklch(21% 0.034 264.665);
+
+  --bg-primary-transparent-10: color-mix(
+    in oklab,
+    var(--color-primary) 10%,
+    transparent
+  );
+  --bg-primary-transparent-25: color-mix(
+    in oklab,
+    var(--color-primary) 25%,
+    transparent
+  );
+  --bg-secondary-transparent-5: color-mix(
+    in oklab,
+    var(--color-secondary) 5%,
+    transparent
+  );
+  --bg-secondary-transparent-10: color-mix(
+    in oklab,
+    var(--color-secondary) 10%,
+    transparent
+  );
+  --bg-secondary-transparent-25: color-mix(
+    in oklab,
+    var(--color-secondary) 25%,
+    transparent
+  );
+  --box-shadow-default: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* ==========================================================================
@@ -145,6 +172,17 @@ p {
   margin: auto;
 }
 
+.px-6 {
+  padding-inline: 3.4rem;
+  padding-block: 1.08rem !important;
+}
+
+/* @media (min-width: 768px) and (min-height: 768px) {
+  .px-6 {
+    padding-inline: 6rem;
+  }
+} */
+
 /* Interactions & Borders */
 .hover-translate-y {
   transition: transform 250ms ease-in-out;
@@ -155,17 +193,18 @@ p {
 }
 
 .border-color-primary {
-  border: 1px solid black;
+  border: 1.8px solid var(--color-gray-300);
+  font-weight: 600;
   transition: border 0.2s ease-in-out;
+  color: var(--color-gray-600);
 }
 
 .border-color-primary:hover {
-  border: 11px solid red;
+  border: 1.8px solid var(--color-primary);
 }
 
 .box-shadow-primary:hover {
-  box-shadow: 0 8px 20px
-    color-mix(in oklab, var(--color-primary) 25%, transparent);
+  box-shadow: 0 8px 20px var(--bg-primary-transparent-25);
 }
 
 /* Text Colors */
@@ -230,7 +269,7 @@ p {
   );
 }
 
-.bg-gradient-accent-to-bottom-right {
+.bg-gradient-accent-primary-to-bottom-right {
   background: linear-gradient(
     to bottom right,
     var(--color-accent),
@@ -238,18 +277,10 @@ p {
   );
 }
 
-.bg-gradient-primary-to-top-right {
+.bg-gradient-accent-secondary-to-bottom-right {
   background: linear-gradient(
-    to top right,
-    var(--color-primary),
-    var(--color-secondary)
-  );
-}
-
-.bg-gradient-primary-to-top-left {
-  background: linear-gradient(
-    to top left,
-    var(--color-primary),
+    to bottom right,
+    var(--color-accent),
     var(--color-secondary)
   );
 }
@@ -279,51 +310,20 @@ p {
   );
 }
 
-.bg-gradient-primary-to-left-reverse {
-  background: linear-gradient(
-    to left,
-    var(--color-secondary),
-    var(--color-primary)
-  );
-}
-
-.bg-gradient-primary-to-top-reverse {
-  background: linear-gradient(
-    to top,
-    var(--color-secondary),
-    var(--color-primary)
-  );
-}
-
-.bg-gradient-primary-to-bottom-reverse {
-  background: linear-gradient(
-    to bottom,
-    var(--color-secondary),
-    var(--color-primary)
-  );
-}
-
-.bg-gradient-primary-to-top-right-reverse {
-  background: linear-gradient(
-    to top right,
-    var(--color-secondary),
-    var(--color-primary)
-  );
-}
-
-.bg-gradient-primary-to-top-left-reverse {
-  background: linear-gradient(
-    to top left,
-    var(--color-secondary),
-    var(--color-primary)
-  );
-}
-
-.bg-gradient-primary-to-bottom-right-reverse {
+.bg-gradient-secondary-to-bottom-right {
   background: linear-gradient(
     to bottom right,
     var(--color-secondary),
-    var(--color-primary)
+    var(--color-accent)
+  );
+}
+
+.bg-gradient-primary-secondary-accent-to-bottom-right {
+  background: linear-gradient(
+    to bottom right,
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-accent)
   );
 }
 
@@ -384,7 +384,7 @@ p {
   font-weight: 600;
   font-size: 0.875rem;
   padding: 0.6rem;
-  background-color: color-mix(in oklab, var(--color-primary) 10%, transparent);
+  background-color: var(--bg-primary-transparent-10);
 }
 
 /*? end Global component */
@@ -407,7 +407,7 @@ p {
 }
 
 .dropdown-item:hover {
-  background-color: color-mix(in oklab, var(--color-secondary) 5%, transparent);
+  background-color: var(--bg-secondary-transparent-5);
   border-radius: 10px;
 }
 
@@ -441,8 +441,8 @@ p {
   border-radius: 10px;
   background-image: linear-gradient(
     to bottom right,
-    color-mix(in oklab, var(--color-primary) 10%, transparent),
-    color-mix(in oklab, var(--color-secondary) 10%, transparent)
+    var(--bg-primary-transparent-10),
+    var(--bg-secondary-transparent-10)
   );
   transition: all 0.2s ease-in-out;
   span {
@@ -503,13 +503,9 @@ p {
 }
 
 .nav_dropdown_main__bg_custom_card {
-  background-color: color-mix(in oklab, var(--color-secondary) 5%, transparent);
+  background-color: var(--bg-secondary-transparent-5);
   border-radius: 10px;
-  border-color: color-mix(
-    in oklab,
-    var(--color-secondary) 25%,
-    transparent
-  ) !important;
+  border-color: var(--bg-secondary-transparent-25) !important;
 }
 
 .nav_dropdown_main {
@@ -560,7 +556,7 @@ p {
 /** start style header  */
 
 header {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-default);
 }
 
 .navbar {
@@ -644,7 +640,7 @@ header {
 
 .home__header {
   font-size: clamp(1rem, 1rem + 3vw, 3.75rem);
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .home__header span:nth-of-type(1) {
@@ -703,7 +699,7 @@ header {
   position: relative;
   z-index: 2;
 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-default);
 }
 
 .header__hero__img {
@@ -795,8 +791,7 @@ header {
 }
 
 #digital-solutions .card:hover {
-  box-shadow: 0 25px 50px -12px
-    color-mix(in oklab, var(--color-primary) 10%, transparent);
+  box-shadow: 0 25px 50px -12px var(--bg-primary-transparent-10);
   transform: translateY(-5px);
 }
 
@@ -874,17 +869,17 @@ header {
 .postgre-sql-card {
   background: linear-gradient(
     to bottom right,
-    oklch(97% 0.014 254.604),
-    oklch(93.2% 0.032 255.585)
+    var(--color-blue-50),
+    var(--color-blue-100)
   );
 
   .icon-box {
-    background-color: oklch(62.3% 0.214 259.815);
+    background-color: var(--color-blue-500);
   }
 
   .small-badge {
-    color: oklch(42.4% 0.199 265.638) !important;
-    background-color: oklch(93.2% 0.032 255.585);
+    color: var(--color-blue-800) !important;
+    background-color: var(--color-blue-100);
   }
 }
 
@@ -1255,7 +1250,7 @@ header {
   padding-block: 1.4rem;
 }
 .accordion-button::after {
-  background-color: color-mix(in oklab, var(--color-primary) 10%, transparent);
+  background-color: var(--bg-primary-transparent-10);
   color: var(--color-primary);
   width: 30px;
   height: 30px;
@@ -1320,7 +1315,7 @@ header {
     to bottom right,
     color-mix(in oklab, var(--color-primary) 5%, transparent),
     transparent,
-    color-mix(in oklab, var(--color-secondary) 5%, transparent)
+    var(--bg-secondary-transparent-5)
   );
 
   overflow: hidden;
