@@ -895,7 +895,10 @@ header {
 /*todo=> start styleTechnologies Cards */
 
 .react-card,
-.python-card {
+.python-card,
+.microsoft-azure-card,
+.docker-card,
+.postgre-sql-card {
   background: linear-gradient(
     to bottom right,
     oklch(97% 0.014 254.604),
@@ -931,7 +934,8 @@ header {
 
 .vuejs-card,
 .nodejs-card,
-.android-native-card {
+.android-native-card,
+.mongodb-card {
   background: linear-gradient(
     to bottom right,
     var(--color-green-50),
@@ -939,7 +943,7 @@ header {
   );
 
   .icon-box {
-    background-color: var(--color-green-500);
+    background-color: var(--color-green-600);
   }
 
   .small-badge {
@@ -949,7 +953,9 @@ header {
 }
 
 .angular-card,
-.go-card {
+.go-card,
+.google-cloud-card,
+.redis-card {
   background: linear-gradient(
     to bottom right,
     var(--color-red-50),
@@ -957,7 +963,7 @@ header {
   );
 
   .icon-box {
-    background-color: var(--color-red-500);
+    background-color: var(--color-red-700);
   }
 
   .small-badge {
@@ -985,7 +991,8 @@ header {
 }
 
 .vite-card,
-.java-card {
+.java-card,
+.elasticsearch-card {
   background: linear-gradient(
     to bottom right,
     var(--color-purple-50),
@@ -993,7 +1000,7 @@ header {
   );
 
   .icon-box {
-    background-color: var(--color-purple-500);
+    background-color: var(--color-purple-600);
   }
 
   .small-badge {
@@ -1003,7 +1010,9 @@ header {
 }
 
 .dotNet-card,
-.xamarin-card {
+.xamarin-card,
+.kubernetes-card,
+.graphql-card {
   background: linear-gradient(
     to bottom right,
     var(--color-indigo-50),
@@ -1037,7 +1046,8 @@ header {
   }
 }
 
-.ios-native-card {
+.ios-native-card,
+.pipeline-card {
   background: linear-gradient(
     to bottom right,
     var(--color-gray-50),
@@ -1054,7 +1064,8 @@ header {
   }
 }
 
-.pwa-card {
+.pwa-card,
+.amazon-aws-card {
   background: linear-gradient(
     to bottom right,
     var(--color-orange-50),
@@ -1071,6 +1082,25 @@ header {
   }
 }
 
+.mysql-card {
+  background: linear-gradient(
+    to bottom right,
+    var(--color-yellow-50),
+    var(--color-yellow-100)
+  );
+
+  .icon-box {
+    background-color: var(--color-yellow-600);
+  }
+
+  .small-badge {
+    color: var(--color-yellow-800) !important;
+    background-color: var(--color-yellow-100);
+  }
+}
+
+/*todo=> end styleTechnologies Cards */
+
 .technology-section__slider-btn {
   background-color: transparent;
   border: 0;
@@ -1080,8 +1110,6 @@ header {
   border-bottom: 1.5px solid var(--color-primary);
   transition: all 0.21s ease-in-out;
 }
-
-/*todo=> end styleTechnologies Cards */
 
 #technology-section {
   .carousel-indicators [data-bs-target] {
