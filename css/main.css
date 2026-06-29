@@ -115,20 +115,60 @@ p {
   color: var(--color-gray-600);
 }
 /* ==========================================================================
-   Gradient Utilities
+   Utilities
    ========================================================================== */
 
-/* Standard */
+/* Typography */
+.fs-small {
+  font-size: 0.9rem;
+}
+
+/* Layout */
+.w-max-content {
+  width: max-content;
+}
+
+.max-w-2xl {
+  max-width: 39rem;
+}
+
+.max-w-3xl {
+  max-width: 45rem;
+}
+
+.p-block-5 {
+  padding-block: 5rem;
+}
+
+.custom-container {
+  width: 85%;
+  margin: auto;
+}
+
+/* Interactions & Borders */
+.hover-translate-y {
+  transition: transform 250ms ease-in-out;
+}
+
+.hover-translate-y:hover {
+  transform: translateY(-0.4rem);
+}
+
+.border-color-primary {
+  border: 1px solid black;
+  transition: border 0.2s ease-in-out;
+}
+
+.border-color-primary:hover {
+  border: 11px solid red;
+}
 
 .box-shadow-primary:hover {
   box-shadow: 0 8px 20px
     color-mix(in oklab, var(--color-primary) 25%, transparent);
 }
 
-.fs-small {
-  font-size: 0.9rem;
-}
-
+/* Text Colors */
 .text-color-primary {
   color: var(--color-primary);
 }
@@ -141,6 +181,23 @@ p {
   color: var(--color-primary);
 }
 
+.text-color-secondary {
+  color: var(--color-secondary);
+}
+
+.text-color-accent {
+  color: var(--color-accent);
+}
+
+.text-color-light {
+  color: var(--color-light);
+}
+
+/* ==========================================================================
+   Gradient Utilities
+   ========================================================================== */
+
+/* Standard */
 .bg-gradient-primary-to-right {
   background: linear-gradient(
     to right,
@@ -214,7 +271,6 @@ p {
 }
 
 /* Reversed */
-
 .bg-gradient-primary-to-right-reverse {
   background: linear-gradient(
     to right,
@@ -286,66 +342,7 @@ p {
     var(--color-secondary),
     var(--color-accent)
   );
-
   font-size: 1.2rem;
-}
-
-.w-max-content {
-  width: max-content;
-}
-
-.text-c-primary {
-  color: var(--color-primary);
-}
-
-.text-c-secondary {
-  color: var(--color-secondary);
-}
-
-.text-c-accent {
-  color: var(--color-accent);
-}
-
-.text-c-dark {
-  color: var(--color-dark);
-}
-
-.text-c-light {
-  color: var(--color-light);
-}
-
-.max-w-2xl {
-  max-width: 39rem;
-}
-
-.max-w-3xl {
-  max-width: 45rem;
-}
-
-.p-block-5 {
-  padding-block: 5rem;
-}
-
-.custom-container {
-  width: 85%;
-  margin: auto;
-}
-
-.hover-translate-y {
-  transition: transform 250ms ease-in-out;
-}
-
-.hover-translate-y:hover {
-  transform: translateY(-0.4rem);
-}
-
-.border-color-primary {
-  border: 1px solid black;
-  transition: border 0.2s ease-in-out;
-}
-
-.border-color-primary :hover {
-  border: 11px solid red;
 }
 
 /*? start Global component */
@@ -687,7 +684,7 @@ header {
   padding-block: 0.8rem;
 }
 
-.header__pragraph {
+.header__paragraph {
   font-size: clamp(1rem, 1rem + 3vw, 1.21rem);
   color: var(--color-gray-600);
 }
@@ -695,30 +692,6 @@ header {
 .header__hero {
   padding: 1.8rem;
   background: #fff;
-}
-
-/* Tablets */
-@media (min-width: 768px) {
-  .header__hero {
-  }
-}
-
-/* Laptops */
-@media (min-width: 992px) {
-  .header__hero {
-  }
-}
-
-/* Desktops */
-@media (min-width: 1200px) {
-  .header__hero {
-  }
-}
-
-/* Large Desktops */
-@media (min-width: 1400px) {
-  .header__hero {
-  }
 }
 
 .header__hero-wrapper {
@@ -775,7 +748,7 @@ header {
 
 /*! end style Home section */
 
-/*? end style digital-solutions-section section */
+/*todo:- Start Digital Solutions Section */
 
 #digital-solutions .card {
   --color-gray-100: oklch(96.7% 0.003 264.542);
@@ -848,7 +821,7 @@ header {
   padding-block: 1rem;
 }
 
-.frontend__pargraph {
+.frontend__paragraph {
   font-size: 1.2rem;
 }
 
@@ -892,7 +865,7 @@ header {
   transform: translateY(-5px);
 }
 
-/*todo=> start styleTechnologies Cards */
+/*todo=> start style Technologies Cards */
 
 .react-card,
 .python-card,
@@ -972,7 +945,7 @@ header {
   }
 }
 
-.talwindcss-card,
+.tailwindcss-card,
 .flutter-card {
   background: linear-gradient(
     to bottom right,
@@ -1099,7 +1072,7 @@ header {
   }
 }
 
-/*todo=> end styleTechnologies Cards */
+/*todo=> end style Technologies Cards */
 
 .technology-section__slider-btn {
   background-color: transparent;
@@ -1145,7 +1118,7 @@ header {
 
 /** start style testimonials-section */
 
-#testimonials-carusel .carousel-item {
+#testimonials-carousel .carousel-item {
   min-height: 520px;
 }
 
@@ -1157,7 +1130,7 @@ header {
   );
 }
 
-.carusel-btn {
+.carousel-btn {
   padding: 0.24rem !important;
   border-radius: 50% !important;
   background-color: var(--color-gray-300) !important;
@@ -1165,7 +1138,7 @@ header {
   transition: all 0.3s ease-in-out !important;
 }
 
-#testimonials-carusel {
+#testimonials-carousel {
   .carousel-indicators [data-bs-target]:hover {
     padding-inline: 1rem !important;
     background: color-mix(
@@ -1276,7 +1249,7 @@ header {
 
 /** end style testimonials-section */
 
-/*todo:- end style testimonials-section */
+/*todo:- Start FAQ Section */
 
 .accordion-button {
   padding-block: 1.4rem;
@@ -1327,7 +1300,7 @@ header {
   font-size: 0.93rem;
 }
 
-/*todo:- end style testimonials-section */
+/*todo:- end FAQ Section */
 
 /*! start style contact-section */
 
